@@ -1,13 +1,38 @@
+import java.util.ArrayList;
+
 public class Polymorphism {
     public static void main(String... args) {
-        Animal a1 = new Lion();
-        Animal a2 = new Tiger();
+        Lion l = new Lion();
+        Tiger t = new Tiger();
+
+        //ポリモーフィズムの活用
+        callBark(l); // Lionのbarkメソッドが呼ばれる
+        callBark(t); // Tigerのbarkメソッドが呼ばれる
+
+        Animal a1 = getAnimal(1);
+        Animal a2 = getAnimal(2);
 
         a1.eat("肉");
-        a1.bark();
-
         a2.eat("魚");
-        a2.bark();
+
+        ArrayList<Animal> al = new ArrayList<>();
+        al.add(a1);
+        al.add(a2);
+        al.forEach(a -> a.bark());
+    }
+
+    //メソッドの引数にポリモーフィズムを活用することで
+    //型の異なるインスタンスを受け取ることが可能
+    public static void callBark(Animal a) {
+        a.bark();
+    }
+
+    private static Animal getAnimal(int i) {
+        return switch(i) {
+            case 1 -> new Lion();
+            case 2 -> new Tiger();
+            default -> new Animal();
+        };
     }
 }
 
