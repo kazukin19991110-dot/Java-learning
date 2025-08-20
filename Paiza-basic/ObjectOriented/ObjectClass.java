@@ -20,6 +20,13 @@ public class ObjectClass {
         System.out.println(b1.equals(b2));
         //b1とb3が正しいかどうか
         System.out.println(b1.equals(b3));
+
+        System.out.println("======================");
+
+        //getClassメソッド
+        Object c1 = new Object();
+
+        System.out.println(c1.getClass());
     }
 }
 
