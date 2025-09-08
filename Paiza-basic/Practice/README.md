@@ -10,6 +10,7 @@
 ②
 (Pracクラス)
 - Prac クラスに戻り値が message である getMessage メソッドを定義
+
 (Mainメソッド)
 - 変数 p1 のインスタンス変数 message に こんにちは を代入
 - 変数 p1 が参照しているインスタンスの getMessage メソッドを呼び出し、戻り値を出力
